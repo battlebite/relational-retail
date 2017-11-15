@@ -1,0 +1,65 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+#top-banner {
+	margin: 8px;
+	padding: 8px;
+}
+#top-banner * {
+	display: inline-block;
+	/*positon: absolute;*/
+}
+#top-banner form {
+	float: right;
+	margin-left: 16px;
+}
+#top-banner form label {
+	margin-left: 16px;
+}
+#content {
+	padding: 8px;
+	text-align: center;
+}
+
+#category-select{
+	width: 85%;
+	margin: 0 auto;
+	padding: 10px 0 20px 0;
+	border: 1px solid #888;
+	background: #eee;
+}
+#category-select li{
+	float: left;
+	display: inline;
+	margin: 0 10px 0 0;
+}
+
+.product-card {
+	display: inline-block;
+	width: 200px;
+	text-align: center;
+	background: #eee;
+	margin: 4px;
+	padding: 8px;
+	border: 1px solid #888;
+	border-radius: 4px;
+}
+.product-card img {
+	width: 150px;
+}
+.product-card h5 {
+	margin: 4px;
+	font-size: 1.2rem;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.product-card p {
+	margin: 0;
+}
+.product-card button {
+	margin-top: 8px;
+}
+footer {
+	text-align: center;
+}
