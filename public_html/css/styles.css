@@ -21,6 +21,20 @@ html, body {
 	padding: 8px;
 	text-align: center;
 }
+
+#category-select{
+	width: 85%;
+	margin: 0 auto;
+	padding: 10px 0 20px 0;
+	border: 1px solid #888;
+	background: #eee;
+}
+#category-select li{
+	float: left;
+	display: inline;
+	margin: 0 10px 0 0;
+}
+
 .product-card {
 	display: inline-block;
 	width: 200px;
@@ -37,6 +51,8 @@ html, body {
 .product-card h5 {
 	margin: 4px;
 	font-size: 1.2rem;
+	white-space: nowrap;
+	overflow: hidden;
 }
 .product-card p {
 	margin: 0;
