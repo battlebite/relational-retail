@@ -19,6 +19,44 @@ create table products (
 	foreign key(manufacturer) references manufacturers(name)
 );
 
+create table users (
+		id int AUTO_INCREMENT,
+    name varchar(255), 
+    username varchar(255),
+    password varchar(255), 
+    address varchar(255),
+    credit_card_number bigint(19),
+    is_admin bit not null default 0,
+    primary key (id)
+);
+
+create table cart (
+	id int AUTO_INCREMENT,
+	user_id int,
+	product_id varchar(255),
+	quantity int not null default 1,
+	total decimal(6,2),
+	primary key(id),
+	foreign key(user_id) references users(id)
+);
+
+create table transactions (
+	id int AUTO_INCREMENT,
+	user_id int,
+	total decimal(6,2),
+	primary key(id),
+	foreign key(user_id) references users(id)
+);
+
+create table transactions_products (
+	transaction_id int,
+	product_id int,
+	quantity int,
+	price decimal(6,2),
+	foreign key(transaction_id) references transactions(id),
+	foreign key(product_id) references products(id)
+);
+
 -- Populate Tables
 insert into manufacturers values
 	( "Sony",
@@ -213,13 +251,3 @@ insert into products values
 		"Game",
 		"Nintendo",
 		"game");
-
-	create table users (
-    name varchar(255), 
-    username varchar(255),
-    password varchar(255), 
-    address varchar(255),
-    credit_card_number bigint(19),
-    is_admin boolean
-  );
-	
