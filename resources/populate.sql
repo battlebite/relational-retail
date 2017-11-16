@@ -213,4 +213,13 @@ insert into products values
 		"Game",
 		"Nintendo",
 		"game");
+
+	create table users (
+    name varchar(255), 
+    username varchar(255),
+    password varchar(255), 
+    address varchar(255),
+    credit_card_number bigint(19),
+    is_admin boolean
+  );
 	
