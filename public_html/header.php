@@ -1,15 +1,9 @@
 <?php 
-	$user = 'root';
-	$password = 'root';
-	$db = 'relational-retail';
-	$host = 'localhost';
-	$port = 3306;
-
-	$mysqli = new mysqli($host,"$user","$password","$db");
-
-	if (mysqli_connect_errno()) {
-		printf("Connect failed: %s\n", mysqli_connect_error());
-		exit();
+	session_start();
+	require_once('connect.php');
+	// session_start();
+	if (!isset($_SESSION['login_error'])) {
+		$_SESSION['login_error'] = '';
 	}
 ?>
 <!DOCTYPE html>
@@ -22,12 +16,27 @@
 <body>
 		<div id="top-banner">
 		<header>Welcome to Relational Retail!</header>
-		<form id="login" action="login.php">
-		  	<label for="username">Username:</label>
-		  	<input type="text" name="username">
-		  	<label for="password">Password:</label>
-		  	<input type="password" name="password">
-		  	<input type="submit">
-		  </form>
+		<?php 
+		if (isset($_SESSION['login_user'])) {
+			?> 
+			<span>Hello <?php echo $_SESSION['login_user'] ?></span>
+			<form action="logout.php">
+				<input type="submit" name="logout" value="Log Out">
+			</form>
+			<?php
+		} else {
+			?>
+			<form id="login" action="login.php" method="POST">
+				<span><?php echo $_SESSION['login_error'] ?></span>
+		  	<!-- <label for="username">Username:</label> -->
+		  	<input type="text" name="username" placeholder="Username">
+		  	<!-- <label for="password">Password:</label> -->
+		  	<input type="password" name="password" placeholder="Password">
+		  	<input type="submit" name="login" value="Login">
+	  	</form>
+	  	<?php
+		}
+		?>
+		
 	</div>
 	<hr>

@@ -29,6 +29,7 @@
 
                 /* close statement */
                 $stmt->close();
+                closeConnection();
             }
         ?>
     </div>
