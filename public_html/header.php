@@ -23,8 +23,7 @@
 			<form action="logout.php">
 				<input type="submit" name="logout" value="Log Out">
 			</form>
-
-			<?php
+		<?php
 		} else {
 			?>
 			<form id="login" action="login.php" method="POST">
