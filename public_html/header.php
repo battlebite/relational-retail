@@ -23,7 +23,7 @@
 			<form action="logout.php">
 				<input type="submit" name="logout" value="Log Out">
 			</form>
-			<?php
+		<?php
 		} else {
 			?>
 			<form id="login" action="login.php" method="POST">
@@ -33,6 +33,7 @@
 		  	<!-- <label for="password">Password:</label> -->
 		  	<input type="password" name="password" placeholder="Password">
 		  	<input type="submit" name="login" value="Login">
+		  	<a href="registerForm.php">Register</a>
 	  	</form>
 	  	<?php
 		}
