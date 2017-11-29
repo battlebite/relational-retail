@@ -17,6 +17,9 @@ html, body {
 #top-banner form label {
 	margin-left: 16px;
 }
+#poop a {
+	float: right;
+}
 #content {
 	padding: 8px;
 	text-align: center;
