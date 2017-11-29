@@ -2,7 +2,6 @@
 /* Registration process, inserts user info into the database 
    
  */
-session_start(); // Starting Session
 require 'header.php';
 // Escape all $_POST variables to protect against SQL injections
 $username = $mysqli->escape_string($_POST['username']);

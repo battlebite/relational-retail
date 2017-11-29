@@ -1,6 +1,5 @@
 <?php
 /* Displays all error messages */
-session_start();
 require 'header.php';
 ?>
 <!DOCTYPE html>
