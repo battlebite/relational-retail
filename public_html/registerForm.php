@@ -1,11 +1,5 @@
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Sign Up Form</title>
-	<link rel="stylesheet" href="css/registerStyles.css"> 
-</head>
 <?php 
-	include 'header.php';
+	include('header.php');
 
 ?>
 <?php

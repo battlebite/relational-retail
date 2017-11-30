@@ -29,7 +29,7 @@
 
                 /* close statement */
                 $stmt->close();
-                closeConnection();
+                mysqli_close($mysqli);
             }
         ?>
     </div>

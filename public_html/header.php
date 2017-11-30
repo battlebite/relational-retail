@@ -15,11 +15,18 @@
 </head>
 <body>
 		<div id="top-banner">
-		<header>Welcome to Relational Retail!</header>
+		<header>Welcome to <a href="index.php">Relational Retail!</a></header>
 		<?php 
 		if (isset($_SESSION['login_user'])) {
 			?> 
 			<span>Hello <?php echo $_SESSION['login_user'] ?></span>
+			<?php 
+				if (isset($_SESSION['is_admin'])) {
+					?>
+					<a href="adminCommands.php"><button>Admin Commands</button></a>
+					<?php
+				}
+			 ?>
 			<form action="logout.php">
 				<input type="submit" name="logout" value="Log Out">
 			</form>
