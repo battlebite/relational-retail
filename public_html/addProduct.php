@@ -27,5 +27,6 @@ if($stmt = $mysqli->prepare($query)) {
 	}
 $_SESSION['form_error'] = "";
 $_SESSION['form_success'] = "Product successfully added.";
-header('Location: adminCommands.php')
+mysqli_close($mysqli);
+header('Location: adminCommands.php');
 ?>

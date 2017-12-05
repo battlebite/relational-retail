@@ -47,8 +47,8 @@ if (!isset($_SESSION['form_success'])) {
         <br>
         <div>
             <h2>Delete Item</h2>
-            <form action="removeProduct.php">
-                <select name="products">
+            <form action="removeProduct.php" method="post">
+                <select name="pid">
                     <?php
                         $query = 'SELECT id, name FROM products';
                         if ($stmt = $mysqli->prepare($query)) {
@@ -71,8 +71,8 @@ if (!isset($_SESSION['form_success'])) {
         <br>
         <div>
             <h2>Change Quantity</h2>
-            <form action="updateProducts.php">
-                <select name="products">
+            <form action="updateProducts.php" method="post">
+                <select name="pid">
                     <?php
                         $query = 'SELECT id, name FROM products';
                         if ($stmt = $mysqli->prepare($query)) {
@@ -101,7 +101,6 @@ if (!isset($_SESSION['form_success'])) {
     </div>
 </div>
 <?php 
-mysqli_close($mysqli);
 include 'footer.php';
 $_SESSION['form_error'] = "";
 $_SESSION['form_success'] = "";
