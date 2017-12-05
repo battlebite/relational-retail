@@ -71,7 +71,7 @@ if (!isset($_SESSION['form_success'])) {
         <br>
         <div>
             <h2>Change Quantity</h2>
-            <form action="updateProducts.php" method="post">
+            <form action="updateProduct.php" method="post">
                 <select name="pid">
                     <?php
                         $query = 'SELECT id, name FROM products';
@@ -89,12 +89,12 @@ if (!isset($_SESSION['form_success'])) {
                         }
                     ?>
                 </select>
-                <select>
+                <select name="action">
                     <option value="add">Add</option>
                     <option value="delete">Remove</option>
                     <option value="set">Set To</option>
                 </select>
-                <input type="number">
+                <input type="number" name="value">
                 <input type="submit" value="Change Quantity">
             </form>
         </div>
