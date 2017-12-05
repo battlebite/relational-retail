@@ -24,7 +24,7 @@
                         <p>$<?php echo $price ?></p>
                         <?php 
                         if ($quantity == 0) echo "<span style='color: red'>Out of stock</span>";
-                            else echo "<button>Ad to Cart</button>";
+                            else echo "<button>Add to Cart</button>";
                             ?>
                         
                     </div>
@@ -33,7 +33,6 @@
 
                 /* close statement */
                 $stmt->close();
-                mysqli_close($mysqli);
             }
         ?>
     </div>

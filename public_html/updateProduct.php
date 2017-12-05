@@ -29,6 +29,7 @@ if($stmt = $mysqli->prepare($query)) {
   $stmt->close();
 }
 $_SESSION['form_success'] = "Product successfully updated";
+mysqli_close($mysqli);
 header('Location: adminCommands.php');
 exit();
 ?>

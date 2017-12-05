@@ -54,4 +54,5 @@ else { // Email doesn't already exist in a database, proceed...
         $_SESSION['message'] = "INSERT INTO users (name, username, password, address, credit_card_number, is_admin ) VALUES ('$name', '$username', '$password', '$address', '$ccNumber', '$isAdmin')" . $mysqli->error;
         header("location: error.php");
     }
+    mysqli_close($mysqli);
 }

@@ -44,4 +44,5 @@ else {
   	header("location: index.php");
   }
 }
+mysqli_close($mysqli);
 ?>
