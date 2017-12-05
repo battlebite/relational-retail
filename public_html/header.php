@@ -34,7 +34,7 @@
 		} else {
 			?>
 			<form id="login" action="login.php" method="POST">
-				<span><?php echo $_SESSION['login_error'] ?></span>
+				<span style="color: red"><?php echo $_SESSION['login_error'] ?></span>
 		  	<!-- <label for="username">Username:</label> -->
 		  	<input type="text" name="username" placeholder="Username">
 		  	<!-- <label for="password">Password:</label> -->
@@ -48,3 +48,4 @@
 		
 	</div>
 	<hr>
+	<?php $_SESSION['login_error'] = ""; ?>

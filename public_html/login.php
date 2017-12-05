@@ -6,7 +6,6 @@ if (empty($_POST['username']) || empty($_POST['password'])) {
 	header("location: index.php");
 }
 else {
-	$_SESSION['login_error'] = "Made it to else";
 	// Define $username and $password
 	$username=$_POST['username'];
 	$password = $_POST['password'];
@@ -40,7 +39,7 @@ else {
   }
   else {
   	// Bad
-  	$_SESSION['login_error'] = "$password";
+  	$_SESSION['login_error'] = "Incorrect username or password";
   	mysqli_close($mysqli);
   	header("location: index.php");
   }
