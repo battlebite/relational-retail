@@ -13,13 +13,11 @@ $description = $_POST['description'];
 $manufacturer = $_POST['manufacturer'];
 $category = $_POST['category'];
 // Check if any blank values
-if ($name == "" || $price == "" || $quantity == "" || $description == "" || $manufacturer == "" || $category = "") {
+if ($name == "" || $price == "" || $quantity == "" || $description == "" || $manufacturer == "" || $category == "") {
 	$_SESSION['form_error'] = "Please fill all fields.";
 	header('Location: adminCommands.php');
 	exit();
 }
-
-//TODO: CATEGORY NOT INSERTING INTO TABLE??????
 
 $query = 'INSERT INTO products (name, price, quantity, image_url, description, manufacturer, category) values (?,?,?,?,?,?,?)';
 if($stmt = $mysqli->prepare($query)) {
