@@ -22,14 +22,17 @@
                         <h5><?php echo $name ?></h5>
                         <!-- Price -->
                         <p>$<?php echo $price ?></p>
-                        <button>Add to Cart</button>
+                        <?php 
+                        if ($quantity == 0) echo "<span style='color: red'>Out of stock</span>";
+                            else echo "<button>Add to Cart</button>";
+                            ?>
+                        
                     </div>
                     <?php
                 }
 
                 /* close statement */
                 $stmt->close();
-                closeConnection();
             }
         ?>
     </div>

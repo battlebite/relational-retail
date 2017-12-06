@@ -15,11 +15,18 @@
 </head>
 <body>
 		<div id="top-banner">
-		<header>Welcome to Relational Retail!</header>
+		<header>Welcome to <a href="index.php">Relational Retail!</a></header>
 		<?php 
 		if (isset($_SESSION['login_user'])) {
 			?> 
 			<span>Hello <?php echo $_SESSION['login_user'] ?></span>
+			<?php 
+				if (isset($_SESSION['is_admin'])) {
+					?>
+					<a href="adminCommands.php"><button>Admin Commands</button></a>
+					<?php
+				}
+			 ?>
 			<form action="logout.php">
 				<input type="submit" name="logout" value="Log Out">
 			</form>
@@ -27,7 +34,7 @@
 		} else {
 			?>
 			<form id="login" action="login.php" method="POST">
-				<span><?php echo $_SESSION['login_error'] ?></span>
+				<span style="color: red"><?php echo $_SESSION['login_error'] ?></span>
 		  	<!-- <label for="username">Username:</label> -->
 		  	<input type="text" name="username" placeholder="Username">
 		  	<!-- <label for="password">Password:</label> -->
@@ -41,3 +48,4 @@
 		
 	</div>
 	<hr>
+	<?php $_SESSION['login_error'] = ""; ?>
